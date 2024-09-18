@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .nav-bar {
+            background-color: bisque;
+            width: 100px;
+        }
+        .main-container {
+            background-color: lightblue;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            background-color: lightcoral;
+            height: 50px;
+        }
+        .content {
+            background-color: lightgreen;
+            flex: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">Nav bar</div>
+        <div class="main-container">
+            <div class="title">Title bar</div>
+            <div class="content">main content</div>
+        </div>
+    </div>
+</body>
+</html>

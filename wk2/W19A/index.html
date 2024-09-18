@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .left {
+            background-color: rosybrown;
+            width: 150px;
+        }
+        .right {
+            background-color: lightblue;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            background-color: lightcoral;
+            height: 50px;
+        }
+        .main-content {
+            background-color: blanchedalmond;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">Left panel</div>
+        <div class="right">
+            <div class="title">Title</div>
+            <div class="main-content">Main Content</div>
+        </div>
+    </div>
+</body>
+</html>
