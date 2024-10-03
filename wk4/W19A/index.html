@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calc() {
+            const in1 = document.querySelector('#in1').value;
+            const in2 = document.querySelector('#in2').value;
+            const result = parseInt(in1) + parseInt(in2);
+            document.querySelector('#result').innerText = result;
+        }
+        function store() {
+            const in1 = document.querySelector('#in1').value;
+            const in2 = document.querySelector('#in2').value;
+            localStorage.setItem("num1", in1);
+            localStorage.setItem("num2", in2);
+        }
+        function restore() {
+            // if (localStorage.hasOwnProperty("num1")) {
+            //     const in1 = localStorage.getItem("num1");
+            //     document.querySelector('#in1').value = in1;
+            // }
+            const in1 = localStorage.getItem("num1") ?? "";
+            document.querySelector('#in1').value = in1;
+            const in2 = localStorage.getItem("num2");
+            document.querySelector('#in2').value = in2;
+            calc();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label>Number 1</label>
+        <input id="in1"/>
+    </div>
+    <div>
+        <label>Number 2</label>
+        <input id="in2"/>
+    </div>
+    <button onclick="calc()">Calculate</button>
+    <button onclick="store()">Store</button>
+    <button onclick="restore()">Restore</button>
+    <div>
+        Result: <span id="result"></span>
+    </div>
+</body>
+</html>

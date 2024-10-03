@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calc() {
+            const in1 = document.getElementById("input-1").value;
+            const in2 = document.getElementById("input-2").value;
+            const resultVal = parseInt(in1) + parseInt(in2);
+
+            document.getElementById("result").innerText = resultVal;
+        }
+        function store() {
+            const in1 = document.getElementById("input-1").value;
+            const in2 = document.getElementById("input-2").value;
+            localStorage.setItem("in1", in1);
+            localStorage.setItem("in2", in2);
+        }
+        function restore() {
+
+            // method 1
+            const in1 = localStorage.getItem("in1") ?? "";
+
+            // // method 2
+            // if (localStorage.hasOwnProperty("in1"))
+            //     document.getElementById("input-1").value = localStorage.getItem("in1");
+            
+            // // method 3
+            // localStorage.getItem('input-1') !== null ? localStorage.getItem('input-1') : "",
+
+            const in2 = localStorage.getItem("in2") ?? "";
+            document.getElementById("input-1").value = in1;
+            document.getElementById("input-2").value = in2;
+            calc();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label>Number 1</label>
+        <input id="input-1">
+    </div>
+    <div>
+        <label>Number 2</label>
+        <input id="input-2">
+    </div>
+    <button onclick="calc()">Calculate</button>
+    <button onclick="store()">Store</button>
+    <button onclick="restore()">Restore</button>
+    <div>
+        <label>Result is <span id="result"></span></label>
+    </div>
+</body>
+</html>
