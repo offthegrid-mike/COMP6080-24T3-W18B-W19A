@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .item {
+            flex: 0 0 33.3%;
+        }
+        body {
+            background-color: black;
+        }
+    </style>
+<body>
+    <button class="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600 transition duration-300" onclick="fetchAPI()">
+        Fetch
+    </button>
+    
+    <div id="container" class="d-flex flex-wrap"></div>
+    
+    <div id="card" class="d-none item mb-2 max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+        <img class="card-image w-full h-48 object-cover" src="https://via.placeholder.com/400" alt="Image Description">
+        <div class="p-4">
+            <h2 class="card-title text-xl font-bold mb-2">Card Title</h2>
+            <p class="card-description text-gray-700">This is a description of the card. It provides some additional information about the content inside.</p>
+            <div class="card-ingredients d-flex flex-row">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

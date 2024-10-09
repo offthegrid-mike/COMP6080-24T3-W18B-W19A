@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function buttonClick() {
+            fetch("https://api.sampleapis.com/coffee/hot")
+            .then((response) => {
+                if (response.status === 200) {
+                    return Promise.reject("Failed to fetch data")
+                }
+                return response.json()
+            })
+            .then((data) => {
+                console.log(data)
+                data.forEach(element => {
+                    console.log(element.title)
+                });
+            })
+            .catch((error) => {
+                console.log("code in the catch block")
+                console.log(error)
+         })
+           
+        }
+    </script>
+</head>
+<body>
+    <button onclick="buttonClick()">Click me</button>
+</body>
+</html>
